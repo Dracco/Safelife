@@ -1,0 +1,103 @@
+﻿@model SafeLifeLib.Models.PatologiaModel
+
+<div class="box box-danger">
+    <div class="box-header with-border">
+        <h3 class="box-title">Patologias</h3>
+    </div>
+    <!-- /.box-header -->
+    <!-- form start -->
+    <div class="box-body">
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Presbiopia" type="checkbox" class="flat-green"> Presbiopia
+                    </label>
+                </div>
+            </div>
+
+            <div class="col-xs-6">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Miopia" type="checkbox" class="flat-green"> Miopia
+                    </label>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Hipermetropia" type="checkbox" class="flat-green"> Hipermetropia
+                    </label>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Astigmatismo" type="checkbox" class="flat-green"> Astigmatismo
+                    </label>
+                </div>
+            </div>
+
+            <div class="col-xs-6">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Diabetes" type="checkbox" class="flat-green"> Diabetes
+                    </label>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Cancer" type="checkbox" class="flat-green"> Câncer
+                    </label>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Hipertensao" type="checkbox" class="flat-green"> Hipertensão
+                    </label>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Hiv" type="checkbox" class="flat-green"> Hiv
+                    </label>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Lupus" type="checkbox" class="flat-green"> Lúpus
+                    </label>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Alzheimer" type="checkbox" class="flat-green"> Alzheimer
+                    </label>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Parkinson" type="checkbox" class="flat-green"> Parkinson
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Outras</label>
+            <textarea asp-for="Outros" class="form-control" rows="3" placeholder="..."></textarea>
+        </div>
+    </div>
+
+    <!-- /.box-body -->
+    <div class="box-footer">
+        <div>
+            <button type="button" class="btn btn-success pull-right">Salvar</button>
+        </div>
+    </div>
+</div>

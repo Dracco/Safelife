@@ -1,0 +1,318 @@
+﻿@model WebSafeLife.ViewModels.CadastroViewModel
+
+@{
+    ViewData["Title"] = "Cadastro";
+    ViewData["Subtitle"] = "Seus dados";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-md-3">
+
+            <!-- Profile Image -->
+            <div class="box box-primary">
+                <div class="box-body box-profile">
+                    <img class="profile-user-img img-responsive img-circle" src="https://pbs.twimg.com/profile_images/2478798806/Perfil.jpg" alt="Foto">
+
+                    <h3 class="profile-username text-center">
+                        @Model.Pessoa.Nome
+                    </h3>
+
+                    <p class="text-muted text-center">@Model.Pessoa.Cargo</p>
+
+                    <ul class="list-group list-group-unbordered">
+                        <li class="list-group-item">
+                            <b>Pontos de saúde</b> <a class="pull-right">1.322</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+            <div class="box box-primary">
+
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <p>A fidelidade das informações é de sua responsabilidade e vai contribuir com a rede médica para melhor lhe atender.</p>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+        <!-- left column -->
+        <div class="col-md-4">
+            <!-- general form elements -->
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Dados Pessoais</h3>
+                </div>
+                <!-- /.box-header -->
+                <!-- form start -->
+                <div class="box-body">
+                    <div class="form-group">
+                        <label>Nome</label>
+                        <input type="text" asp-for="Pessoa.Nome" class="form-control" placeholder="Seu nome">
+                    </div>
+                    <div class="form-group">
+                        <label>CPF</label>
+                        <input type="text" asp-for="Pessoa.Cpf" class="form-control" data-inputmask="'mask': '999.999.999-99'" data-mask="">
+                    </div>
+                    <div class="form-group">
+                        <label>Sexo</label>
+                        <input type="hidden" asp-for="Pessoa.Genero" />
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="M">
+                                Masculino
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="F">
+                                Feminino
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Data de Nascimento:</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" asp-for="Pessoa.DataNascimento" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
+                        </div>
+                        <!-- /.input group -->
+                    </div>
+                    <div class="form-group">
+                        <label>Estado Civil</label>
+                        <select asp-for="Pessoa.EstadoCivil" class="form-control">
+                            <option>Solteiro(a)</option>
+                            <option>Casado(a)</option>
+                            <option>Viúvo(a)</option>
+                            <option>Separado(a)</option>
+                            <option>...</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Profissão</label>
+                        <input type="text" asp-for="Pessoa.Profissao" class="form-control" placeholder="Sua profissão">
+                    </div>
+                    <div class="form-group">
+                        <label>Cargo</label>
+                        <input type="text" asp-for="Pessoa.Cargo" class="form-control" placeholder="Seu cargo atual">
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+
+        </div>
+        <!--/.col (left) -->
+        <!-- right column -->
+        <div class="col-md-5">
+            <!-- Horizontal Form -->
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Dados de Contato</h3>
+                </div>
+                <!-- /.box-header -->
+                <!-- form start -->
+                <div class="box-body">
+                    <div class="form-group">
+                        <label>E-mail</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                            <input asp-for="Pessoa.Email" type="email" class="form-control" placeholder="Preencha seu e-mail">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Celular</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <input type="text" asp-for="Pessoa.Celular" class="form-control" data-inputmask="&quot;mask&quot;: &quot;(999) 999-9999&quot;" data-mask="">
+                        </div>
+                        <!-- /.input group -->
+                    </div>
+                    <div class="form-group">
+                        <label>Telefone</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <input type="text" asp-for="Pessoa.Telefone" class="form-control" data-inputmask="&quot;mask&quot;: &quot;(999) 999-9999&quot;" data-mask="">
+                        </div>
+                        <!-- /.input group -->
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+
+        </div>
+        <!--/.col (right) -->
+        <!-- right column -->
+        <div class="col-md-5">
+            <!-- Horizontal Form -->
+            <div id="endereco" class="box box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Endereço</h3>
+                </div>
+                <!-- /.box-header -->
+                <!-- form start -->
+                <div class="box-body">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-6 col-md-6">
+                                <label>CEP</label>
+                                <div class="input-group">
+
+                                    <input asp-for="Pessoa.Cep" type="text" class="form-control">
+                                    <span class="input-group-btn">
+                                        <button type="button" id="btnConsultaCep" class="btn btn-default btn-flat">Buscar</button>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-md-6">
+                                <label>Logradouro</label>
+
+                                <input type="text" asp-for="Pessoa.Endereco" class="form-control" placeholder="Seu endereço" />
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label>Número</label>
+                                <input type="number" asp-for="Pessoa.Numero" class="form-control" />
+                            </div>
+                            <div class="col-xs-6">
+                                <label>Complemento</label>
+                                <input type="text" asp-for="Pessoa.Complemento" class="form-control" />
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="form-group">
+                        <label>Bairro</label>
+                        <input type="text" asp-for="Pessoa.Bairro" class="form-control" placeholder="Seu bairro">
+
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label>Cidade</label>
+                                <input type="text" asp-for="Pessoa.Cidade" class="form-control" />
+                            </div>
+                            <div class="col-xs-6">
+                                <label>UF</label>
+                                <select asp-for="Pessoa.Uf" class="form-control">
+                                    <option>Selecione</option>
+                                    <option value="AC">AC - Acre</option>
+                                    <option value="AL">AL - Alagoas</option>
+                                    <option value="AM">AM - Amazonas</option>
+                                    <option value="AP">AP - Amapá</option>
+                                    <option value="BA">BA - Bahia</option>
+                                    <option value="CE">CE - Ceará</option>
+                                    <option value="DF">DF - Distrito Federal</option>
+                                    <option value="ES">ES - Espírito Santo</option>
+                                    <option value="GO">GO - Goiás</option>
+                                    <option value="MA">MA - Maranhão</option>
+                                    <option value="MG">MG - Minas Gerais</option>
+                                    <option value="MS">MS - Mato Grosso do Sul</option>
+                                    <option value="MT">MT - Mato Grosso</option>
+                                    <option value="PA">PA - Pará</option>
+                                    <option value="PB">PB - Paraíba</option>
+                                    <option value="PE">PE - Pernambuco</option>
+                                    <option value="PI">PI - Piauí</option>
+                                    <option value="PR">PR - Paraná</option>
+                                    <option value="RJ">RJ - Rio de Janeiro</option>
+                                    <option value="RN">RN - Rio Grande do Norte</option>
+                                    <option value="RO">RO - Rondônia</option>
+                                    <option value="RR">RR - Roraima</option>
+                                    <option value="RS">RS - Rio Grande do Sul</option>
+                                    <option value="SC">SC - Santa Catarina</option>
+                                    <option value="SE">SE - Sergipe</option>
+                                    <option value="SP">SP - São Paulo</option>
+                                    <option value="TO">TO - Tocantins</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+
+            </div>
+            <div class="pull-right">
+                <button type="button" class="btn btn-adn pull-right-container">Cancelar</button>
+                <button type="submit" class="btn btn-success pull-right-container">Salvar</button>
+            </div>
+            <!--/.col (right) -->
+        </div>
+        <!-- /.row -->
+    </div>
+</section>
+<!-- /.content -->
+
+@section Scripts{
+    <script>
+        $(function () {
+            $("#btnConsultaCep").click(function () {
+
+                var cep = $('#Pessoa_Cep').val();
+
+                if (cep == "") {
+                    //ToastR("warning", "É necessário preencher o CEP para fazer a busca");
+                    $('#Pessoa_Cep').focus();
+                }
+                else {
+                    //$("#loading").fadeIn();
+
+                    //limpar inputs
+                    $("#endereco input").not($('#Pessoa_Cep')).val("");
+                    $("#endereco select").prop("selectedIndex", 0).find('option').attr("selected", false);
+
+
+                    $.ajax({
+                        url: '/Cadastro/DadosCep',
+                        data: "cep=" + cep,
+                        cache: false,
+                        success: function (data) {
+                            if (data != null && (data.bairro !== null || data.cidade !== null || data.logradouro !== null)) {
+                                $("#Pessoa_Endereco").val(data.logradouro);
+                                $("#Pessoa_Complemento").val(data.complemento);
+                                $("#Pessoa_Bairro").val(data.bairro);
+                                $("#Pessoa_Cidade").val(data.cidade);
+                                $("#Pessoa_Uf option[value='" + data.uf + "']").attr('selected', 'selected');
+                                console.log(data);
+                                //ToastR("success", "Dados retornados com sucesso");
+                            }
+                            else {
+                                ;//ToastR("warning", "Não foram encontrados dados do CEP, preencha-os manualmente");
+                            }
+                        },
+                        error: function (data) {
+                            ;//ToastR("warning", "Não foi possível recuperar os dados do CEP informado, preencha-os manualmente");
+                        },
+                        complete: function () {
+                            //$("#loading").fadeOut();
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+}

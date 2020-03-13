@@ -1,0 +1,9 @@
+D:\Dracco\Safelife\Web.SafeLife\SafeLifeLib\bin\Debug\netcoreapp2.1\SafeLifeLib.deps.json
+D:\Dracco\Safelife\Web.SafeLife\SafeLifeLib\bin\Debug\netcoreapp2.1\SafeLifeLib.dll
+D:\Dracco\Safelife\Web.SafeLife\SafeLifeLib\bin\Debug\netcoreapp2.1\SafeLifeLib.pdb
+D:\Dracco\Safelife\Web.SafeLife\SafeLifeLib\obj\Debug\netcoreapp2.1\SafeLifeLib.csprojAssemblyReference.cache
+D:\Dracco\Safelife\Web.SafeLife\SafeLifeLib\obj\Debug\netcoreapp2.1\SafeLifeLib.csproj.CoreCompileInputs.cache
+D:\Dracco\Safelife\Web.SafeLife\SafeLifeLib\obj\Debug\netcoreapp2.1\SafeLifeLib.AssemblyInfoInputs.cache
+D:\Dracco\Safelife\Web.SafeLife\SafeLifeLib\obj\Debug\netcoreapp2.1\SafeLifeLib.AssemblyInfo.cs
+D:\Dracco\Safelife\Web.SafeLife\SafeLifeLib\obj\Debug\netcoreapp2.1\SafeLifeLib.dll
+D:\Dracco\Safelife\Web.SafeLife\SafeLifeLib\obj\Debug\netcoreapp2.1\SafeLifeLib.pdb

@@ -1,0 +1,438 @@
+﻿@model WebSafeLife.ViewModels.DadosMedicosViewModel
+
+
+@{
+    ViewData["Title"] = "Dados Médicos";
+    ViewData["Subtitle"] = "Informações completas sobre a sua saúde";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <!-- left column -->
+        <div class="col-md-6">
+            <!-- general form elements -->
+            <div class="box box-warning">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Info</h3>
+                </div>
+                <!-- /.box-header -->
+                <!-- form start -->
+                <div class="box-body">
+                    <div class="row form-group">
+                        <div class="col-xs-6">
+                            <label>Peso Atual</label>
+                            <div class="input-group">
+                                <input asp-for="Peso.Peso" class="form-control" placeholder="Seu peso atual" />
+                                <span class="input-group-addon">kg</span>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <label>Altura</label>
+                            <div class="input-group">
+                                <input asp-for="DadosMedicos.Altura" class="form-control" placeholder="Sua altura" />
+                                <span class="input-group-addon">m</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="form-group">
+                            <label>Tipo Sanguíneo</label>
+                            <div class="row form-group">
+                                <input type="hidden" asp-for="DadosMedicos.TipoSanguineo" />
+                                <div class="col-xs-3">
+                                    <div class="checkbox margin-top-none">
+                                        <label>
+                                            <input type="radio" name="tipoSanguineo" class="flat-green"> A
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-3">
+                                    <div class="checkbox margin-top-none">
+                                        <label>
+                                            <input type="radio" name="tipoSanguineo" class="flat-green"> AB
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-3">
+                                    <div class="checkbox margin-top-none">
+                                        <label>
+                                            <input type="radio" name="tipoSanguineo" class="flat-green"> B
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-3">
+                                    <div class="checkbox margin-top-none">
+                                        <label>
+                                            <input type="radio" name="tipoSanguineo" class="flat-green"> O
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Fator Rh</label>
+                            <div class="row form-group">
+                                <input type="hidden" asp-for="DadosMedicos.FatorRh" />
+                                <div class="col-xs-6">
+                                    <div class="checkbox margin-top-none">
+                                        <label>
+                                            <input type="radio" name="fatorRh" class="flat-green" checked> Positivo (+)
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="checkbox margin-top-none">
+                                        <label>
+                                            <input type="radio" name="fatorRh" class="flat-green"> Negativo (-)
+                                        </label>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Histórico Familiar</label>
+                            <textarea asp-for="DadosMedicos.HistoricoFamiliar" class="form-control" rows="3" placeholder="..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Alergias</label>
+                            <textarea asp-for="DadosMedicos.Alergia" class="form-control" rows="3" placeholder="..."></textarea>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer">
+                    <div>
+                        <button type="button" class="btn btn-success pull-right">Salvar</button>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.box -->
+
+            <partial name="Box/_procedimentos" model="Model.DadosMedicos" />
+            <partial name="Box/_patologias" model="Model.DadosMedicos" />
+
+            
+
+
+        </div>
+        <!--/.col (left) -->
+        <!-- right column -->
+        <div class="col-md-6">
+            <!-- Horizontal Form -->
+            <div class="box box-warning">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Dia-a-dia</h3>
+                </div>
+                <!-- /.box-header -->
+                <!-- form start -->
+                <div class="box-body no-padding">
+                    <table class="table table-striped">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <label>Pratica Atividade Física</label>
+                                    <div class="row form-group">
+                                        <input type="hidden" asp-for="DiaaDia.PraticaAtividadeFisica" />
+                                        <div class="col-xs-3">
+                                            <div class="checkbox margin-top-none">
+                                                <label>
+                                                    <input type="radio" name="atividadeFisica" class="flat-green"> Não
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-3">
+                                            <div class="checkbox margin-top-none">
+                                                <label>
+                                                    <input type="radio" name="atividadeFisica" class="flat-green"> Às vezes
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-3">
+                                            <div class="checkbox margin-top-none">
+                                                <label>
+                                                    <input type="radio" name="atividadeFisica" class="flat-green"> Regularmente
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-3">
+                                            <div class="checkbox margin-top-none">
+                                                <label>
+                                                    <input type="radio" name="atividadeFisica" class="flat-green"> Com bastante frequência
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>Fumante</label>
+                                    <div class="row form-group">
+                                        <input type="hidden" asp-for="DiaaDia.Fuma" />
+                                        <div class="col-xs-3">
+                                            <div class="checkbox margin-top-none">
+                                                <label>
+                                                    <input type="radio" name="fumante" class="flat-green"> Não
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-3">
+                                            <div class="checkbox margin-top-none">
+                                                <label>
+                                                    <input type="radio" name="fumante" class="flat-green"> Às vezes
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-3">
+                                            <div class="checkbox margin-top-none">
+                                                <label>
+                                                    <input type="radio" name="fumante" class="flat-green"> Regularmente
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-3">
+                                            <div class="checkbox margin-top-none">
+                                                <label>
+                                                    <input type="radio" name="fumante" class="flat-green"> Com bastante frequência
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>Bebe Álcool</label>
+                                    <div class="row form-group">
+                                        <input type="hidden" asp-for="DiaaDia.BebeAlcool" />
+                                        <div class="col-xs-3">
+                                            <div class="checkbox margin-top-none">
+                                                <label>
+                                                    <input type="radio" name="alcool" class="flat-green"> Não
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-3">
+                                            <div class="checkbox margin-top-none">
+                                                <label>
+                                                    <input type="radio" name="alcool" class="flat-green"> Às vezes
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-3">
+                                            <div class="checkbox margin-top-none">
+                                                <label>
+                                                    <input type="radio" name="alcool" class="flat-green"> Regularmente
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-3">
+                                            <div class="checkbox margin-top-none">
+                                                <label>
+                                                    <input type="radio" name="alcool" class="flat-green"> Com bastante frequência
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>Usa drogas</label>
+                                    <div class="row form-group">
+                                        <input type="hidden" asp-for="DiaaDia.UsaDrogas" />
+                                        <div class="col-xs-3">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="radio" name="drogas" class="flat-green"> Não
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-3">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="radio" name="drogas" class="flat-green"> Às vezes
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-3">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="radio" name="drogas" class="flat-green"> Regularmente
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-3">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="radio" name="drogas" class="flat-green"> Com bastante frequência
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer">
+                    <div>
+                        <button type="button" class="btn btn-success pull-right">Salvar</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="box box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Vacinas</h3>
+                </div>
+                <!-- /.box-header -->
+                <!-- form start -->
+                <div class="box-body no-padding">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th style="width: 10px">#</th>
+                                <th>Vacina</th>
+                                <th>Data</th>
+                                <th>Local</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @*@foreach (var vacina in Model.Vacinas)
+                                {
+                                    <tr>
+                                        <td>@vacina.Id</td>
+                                        <td>@vacina.Descricao</td>
+                                        <td>@vacina.Data</td>
+                                        <td>@vacina.Local</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-default"><i class="fa fa-edit"></i></button>
+                                                <button type="button" class="btn btn-default"><i class="fa fa-trash-o"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }*@
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer">
+                    <div>
+                        <button type="submit" class="btn btn-success pull-right">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+            <!-- /.box -->
+            <div class="box box-success">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Convênios</h3>
+                </div>
+                <!-- /.box-header -->
+                <!-- form start -->
+                <div class="box-body no-padding">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th style="width: 10px">#</th>
+                                <th>Nome</th>
+                                <th>Vencimento</th>
+                                <th>Código</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @*@foreach (var convenio in Model.Convenios)
+                                {
+                                    <tr>
+                                        <td>@convenio.Id</td>
+                                        <td>@convenio.Operadora</td>
+                                        <td>@convenio.Matricula</td>
+                                        <td>@convenio.DataValidade</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-default"><i class="fa fa-edit"></i></button>
+                                                <button type="button" class="btn btn-default"><i class="fa fa-trash-o"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }*@
+                        </tbody>
+                    </table>
+                </div>
+                <div class="box-footer">
+                    <div>
+                        <button type="submit" class="btn btn-success pull-right">Adicionar</button>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Cirurgias</h3>
+                </div>
+                <!-- /.box-header -->
+                <!-- form start -->
+                <div class="box-body no-padding">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th style="width: 10px">#</th>
+                                <th>Cirurgia</th>
+                                <th>Data</th>
+                                <th>Local</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @*@foreach (var cirurgia in Model.Cirurgias)
+                                {
+                                    <tr>
+                                        <td>@cirurgia.Id</td>
+                                        <td>@cirurgia.Descricao</td>
+                                        <td>@cirurgia.Data</td>
+                                        <td>@cirurgia.Local</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-default"><i class="fa fa-edit"></i></button>
+                                                <button type="button" class="btn btn-default"><i class="fa fa-trash-o"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }*@
+
+
+                        </tbody>
+                    </table>
+
+                </div>
+
+                <!-- /.box-body -->
+                <div class="box-footer">
+                    <div>
+                        <button type="submit" class="btn btn-success pull-right">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- /.box -->
+        </div>
+        <!--/.col (right) -->
+        <!-- /.row -->
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+</section>
+

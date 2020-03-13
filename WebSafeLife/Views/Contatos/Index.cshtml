@@ -1,0 +1,137 @@
+﻿@model WebSafeLife.ViewModels.ContatosViewModel
+
+@{
+    ViewData["Title"] = "Contatos de Emergência";
+    ViewData["Subtitle"] = "Sua família e amigos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Horizontal Form -->
+            <div class="box box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Contatos</h3>
+                </div>
+                <!-- /.box-header -->
+                <!-- form start -->
+                <div class="box-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th style="width: 10px">#</th>
+                                <th>Nome</th>
+                                <th>Relacionamento</th>
+                                <th>Telefone</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var contato in Model.Contatos)
+                            {
+                                <tr>
+                                    <td>@contato.Id</td>
+                                    <td>@contato.Nome</td>
+                                    <td>@contato.Relacionamento</td>
+                                    <td>@contato.Celular</td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-default"><i class="fa fa-edit"></i></button>
+                                            <button type="button" class="btn btn-default"><i class="fa fa-trash-o"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer">
+                    <div>
+                        <button type="submit" class="btn btn-success pull-right" data-toggle="modal" data-target="#modal-default">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--/.col (right) -->
+
+    </div>
+
+
+    <!-- /.row -->
+</section>
+<!-- /.content -->
+<!--modal-dialog-->
+<div class="modal fade" id="modal-default">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Contato</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Nome</label>
+                    <input type="text"  class="form-control" placeholder="Nome Completo">
+                </div>
+                <div class="form-group">
+                    <label>Relacionamento</label>
+                    <select  class="form-control">
+                        <option>Escolha</option>
+                        <option>Esposo(a)</option>
+                        <option>Filho(a)</option>
+                        <option>Pai/Mãe</option>
+                        <option>Avô(ó)</option>
+                        <option>Irmão(ã)</option>
+                        <option>Namorado(a)</option>
+                        <option>Tio(a)</option>
+                        <option>Primo(a)</option>
+                        <option>Amigo(a)</option>
+                        <option>Outros</option>
+                    </select>
+                </div>
+                <div class="row form-group">
+                    <div class="col-xs-6">
+                        <label>Celular</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <input type="text" class="form-control" data-inputmask="&quot;mask&quot;: &quot;(99) 999-9999&quot;" data-mask="" id="Celular" name="Celular" value="" placeholder="(XX) X XXXX-XXXX">
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <label>Outro Telefone</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <input type="text" class="form-control" data-inputmask="&quot;mask&quot;: &quot;(99) 999-9999&quot;" data-mask="" id="Celular" name="Celular" value="" placeholder="(XX) X XXXX-XXXX">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>E-mail</label>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                        <input  type="email" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Salvar</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>

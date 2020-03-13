@@ -1,0 +1,28 @@
+﻿@model List<SafeLifeLib.Models.MedicamentoModel>
+
+<div class="box box-info">
+    <div class="box-header with-border">
+        <h3 class="box-title">Medicamentos</h3>
+    </div>
+    <div class="box-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Nome do Medicamento</th>
+                    <th>Para que usou</th>
+                    <th>Período</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var medicamento in Model)
+                {
+                    <tr>
+                        <td>@medicamento.Nome</td>
+                        <td>@medicamento.Motivo</td>
+                        <td>@medicamento.DataInicio a @medicamento.DataFim</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

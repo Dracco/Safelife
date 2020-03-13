@@ -1,0 +1,334 @@
+﻿@model SafeLifeLib.Models.ProntuarioModel
+@{
+    ViewData["Title"] = "Prontuários";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Select2 -->
+<link rel="stylesheet" href="/lib/select2/dist/css/select2.min.css">
+
+<section class="content">
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Box Comment -->
+            <div class="box box-widget">
+                <div class="box-header with-border">
+                    <div class="user-block">
+                        <img class="img-circle" src="/images/user1-128x128.jpg" alt="User Image">
+                        <span class="username"><a href="#">Dr. Jonathan Burke Jr.</a></span>
+                        <span class="description">Oftalmologista - 12/12/2019 17:30</span>
+                    </div>
+                    <!-- /.user-block -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <dl>
+                        <dt>Queixa principal</dt>
+                        <dd>Dor de cabeça constante que não resolve com remédios.</dd>
+                        <dt>Está usando medicamentos?</dt>
+                        <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+                        <dd>Donec id elit non mi porta gravida at eget metus.</dd>
+                        <dt>Observações</dt>
+                        <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+                        <dd>Porta sem malesuada magna mollis euismod.</dd>
+                    </dl>
+
+                </div>
+                <!-- /.box-body -->
+
+                <div class="box-footer">
+                    <div>
+                        <button type="button" class="btn btn-default pull-right" data-toggle="modal" data-target="#modal-default">Ver prontuário completo</button>
+                    </div>
+                </div>
+                <!-- /.box-footer -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-6">
+            <!-- Box Comment -->
+            <div class="box box-widget">
+                <div class="box-header with-border">
+                    <div class="user-block">
+                        <img class="img-circle" src="/images/user4-128x128.jpg" alt="User Image">
+                        <span class="username"><a href="#">Dra. Ana Damascena</a></span>
+                        <span class="description">Cirurgiã - 02/11/2019 09:12</span>
+                    </div>
+                    <!-- /.user-block -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <dl>
+                        <dt>Queixa principal</dt>
+                        <dd>Lorem ipsun dolor sit amet.</dd>
+                        <dt>Está usando medicamentos?</dt>
+                        <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+                        <dd>Donec id elit non mi porta gravida at eget metus.</dd>
+                        <dt>Observações</dt>
+                        <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+                    </dl>
+
+                </div>
+                <!-- /.box-body -->
+
+                <div class="box-footer">
+                    <div>
+                        <button type="button" class="btn btn-default pull-right" data-toggle="modal" data-target="#modal-default">Ver prontuário completo</button>
+                    </div>
+                </div>
+                <!-- /.box-footer -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+
+</section>
+
+<div class="modal fade" id="modal-default">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div class="user-block">
+                    <img class="img-circle" src="/images/user1-128x128.jpg" alt="User Image">
+                    <span class="username"><a href="#">Dr. Jonathan Burke Jr.</a></span>
+                    <span class="description">Oftalmologista - 12/12/2019 17:30</span>
+                </div>
+            </div>
+            <div class="modal-body no-padding">
+                <div class="nav-tabs-custom no-margin">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#anamnese" data-toggle="tab">Anamnese</a></li>
+                        <li><a href="#prescricao" data-toggle="tab">Prescrição</a></li>
+                        <li><a href="#receitas" data-toggle="tab">Receitas</a></li>
+                        <li><a href="#obs" data-toggle="tab">Observações</a></li>
+                        <li><a href="#anexos" data-toggle="tab">Anexos</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="anamnese">
+                            <div class="form-group">
+                                <label>Queixa Principal</label>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Anamnese</label>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>CID10</label>
+                                <select class="form-control select2" style="width: 100%;">
+                                    <option>Escolha</option>
+                                    <option>A10 - Cólera</option>
+                                    <option>A36 - Difteria</option>
+                                    <option>C56 - Neoplasia Maligna do Ovário</option>
+                                    <option>G81 - Hemiplegia</option>
+                                    <option>G96 - Outros Transtornos do Sistema Nervoso Central</option>
+                                    <option>J86 - Piotórax</option>
+                                    <option>R81 - Glicosúria</option>
+                                    <option>T71 - Asfixia</option>
+                                    <option>U88 - Agente Resistente a Múltiplos Antibióticos</option>
+                                    <option>W78 - Inalação do Conteúdo Gástrico</option>
+                                    <option>X87 - Agressão Por Pesticidas</option>
+                                    <option>Y58 - Efeitos Adversos de Vacinas Bacterianas</option>
+                                    <option>Z80 - História Familiar de Neoplasia Maligna</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Medicamentos em uso</label>
+                                <textarea class="form-control" rows="2"></textarea>
+                            </div>
+                        </div>
+                        <!-- /.tab-pane -->
+                        <div class="tab-pane" id="prescricao">
+                            <div class="form-group">
+                                <label>Prescrição</label>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Exames Solicitados</label>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <!-- /.tab-pane -->
+                        <div class="tab-pane" id="receitas">
+                            <table class="table table-bordered table-striped">
+                                <tbody>
+                                    <tr>
+                                        <th style="width: 10px">#</th>
+                                        <th>Data e Hora</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1.</td>
+                                        <td>12/05/2019 15:12:45</td>
+                                        <td>
+                                            <button type="button" class="btn btn-default"><i class="fa fa-trash-o"></i></button>
+                                            <a href="/Prontuarios/Receita" class="btn btn-default"><i class="fa fa-eye"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2.</td>
+                                        <td>13/05/2019 09:30:32</td>
+                                        <td>
+                                            <button type="button" class="btn btn-default"><i class="fa fa-trash-o"></i></button>
+                                            <a href="/Prontuarios/Receita" class="btn btn-default"><i class="fa fa-eye"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>3.</td>
+                                        <td>15/05/2019 12:00:08</td>
+                                        <td>
+                                            <button type="button" class="btn btn-default"><i class="fa fa-trash-o"></i></button>
+                                            <a href="/Prontuarios/Receita" class="btn btn-default"><i class="fa fa-eye"></i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <a href="/Prontuarios/Receita" class="btn btn-primary">Nova Receita</a>
+                        </div>
+                        <!-- /.tab-pane -->
+                        <div class="tab-pane" id="obs">
+                            <div class="form-group">
+                                <label>Observações</label>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+                            <div class="box box-widget">
+                                <div class="box-header no-border no-padding">
+                                    <div class="row">
+                                        <div class="col-md-11">
+                                            <div class="user-block">
+                                                <label>Comentários</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <div class="box-tools">
+                                                <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                                    <i class="fa fa-minus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box-footer box-comments">
+                                    <div class="box-comment">
+                                        <!-- User image -->
+                                        <img class="img-circle img-sm" src="/images/user3-128x128.jpg" alt="User Image">
+
+                                        <div class="comment-text">
+                                            <span class="username">
+                                                Maria Gonzales
+                                                <span class="text-muted pull-right">Hoje às 7:56</span>
+                                            </span><!-- /.username -->
+                                            It is a long established fact that a reader will be distracted
+                                            by the readable content of a page when looking at its layout.
+                                        </div>
+                                        <!-- /.comment-text -->
+                                    </div>
+                                    <!-- /.box-comment -->
+                                    <div class="box-comment">
+                                        <!-- User image -->
+                                        <img class="img-circle img-sm" src="/images/user4-128x128.jpg" alt="User Image">
+
+                                        <div class="comment-text">
+                                            <span class="username">
+                                                Luna Stark
+                                                <span class="text-muted pull-right">Hoje às 8:03</span>
+                                            </span><!-- /.username -->
+                                            It is a long established fact that a reader will be distracted
+                                            by the readable content of a page when looking at its layout.
+                                        </div>
+                                        <!-- /.comment-text -->
+                                    </div>
+                                    <!-- /.box-comment -->
+                                </div>
+                                <!-- /.box-footer -->
+                                <div class="box-footer">
+                                    <form action="#" method="post">
+                                        <img class="img-responsive img-circle img-sm" src="/images/user4-128x128.jpg" alt="Alt Text">
+                                        <!-- .img-push is used to add margin to elements next to floating images -->
+                                        <div class="img-push">
+                                            <input type="text" class="form-control input-sm" placeholder="Adicione comentários">
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- /.box-footer -->
+                            </div>
+                        </div>
+                        <!-- /.tab-pane -->
+                        <div class="tab-pane" id="anexos">
+                            <table class="table table-bordered table-striped">
+                                <tbody>
+                                    <tr>
+                                        <th style="width: 10px">#</th>
+                                        <th>Nome do arquivo</th>
+                                        <th>Data e Hora</th>
+                                        <th>Anexo</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1.</td>
+                                        <td>ficha cadastral</td>
+                                        <td>12/05/2019 15:12:45</td>
+                                        <td>fixacadastral.pdf</td>
+                                        <td>
+                                            <button type="button" class="btn btn-default"><i class="fa fa-trash-o"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2.</td>
+                                        <td>ficha cadastral</td>
+                                        <td>12/05/2019 15:12:45</td>
+                                        <td>fixacadastral.pdf</td>
+                                        <td>
+                                            <button type="button" class="btn btn-default"><i class="fa fa-trash-o"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="form-group">
+                                <label for="exampleInputFile">Anexar documento</label>
+                                <input type="file" id="exampleInputFile" class="btn btn-default">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.tab-content -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-print"></i> Imprimir</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Salvar</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+@section Scripts{
+    <!-- Select2 -->
+    <script src="/lib/select2/dist/js/select2.full.min.js"></script>
+    <!-- InputMask -->
+    <script src="/plugins/input-mask/jquery.inputmask.js"></script>
+    <script src="/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+    <script src="/plugins/input-mask/jquery.inputmask.extensions.js"></script>
+
+    <script>
+        $(function () {
+            //Initialize Select2 Elements
+            $('.select2').select2()
+
+            //Datemask dd/mm/yyyy
+            $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
+            //Datemask2 mm/dd/yyyy
+            $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
+            //Money Euro
+            $('[data-mask]').inputmask()
+
+
+        })</script>
+}

@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.902
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebSafeLife", "WebSafeLife\WebSafeLife.csproj", "{D62E093B-8485-4A93-9C80-7308F980575E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SafeLife", "SafeLife\SafeLife.csproj", "{BF330125-9A74-4FDB-834F-02EEA00AA150}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BD", "BD\BD.csproj", "{A12FD714-ACFA-46BE-9505-F4A4B687D400}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SafeLifeLib", "SafeLifeLib\SafeLifeLib.csproj", "{DFE7F69B-AA46-4D3F-AEBB-7F8AFBCD1A5E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D62E093B-8485-4A93-9C80-7308F980575E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D62E093B-8485-4A93-9C80-7308F980575E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D62E093B-8485-4A93-9C80-7308F980575E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D62E093B-8485-4A93-9C80-7308F980575E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF330125-9A74-4FDB-834F-02EEA00AA150}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF330125-9A74-4FDB-834F-02EEA00AA150}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF330125-9A74-4FDB-834F-02EEA00AA150}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF330125-9A74-4FDB-834F-02EEA00AA150}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A12FD714-ACFA-46BE-9505-F4A4B687D400}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A12FD714-ACFA-46BE-9505-F4A4B687D400}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A12FD714-ACFA-46BE-9505-F4A4B687D400}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A12FD714-ACFA-46BE-9505-F4A4B687D400}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFE7F69B-AA46-4D3F-AEBB-7F8AFBCD1A5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFE7F69B-AA46-4D3F-AEBB-7F8AFBCD1A5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFE7F69B-AA46-4D3F-AEBB-7F8AFBCD1A5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFE7F69B-AA46-4D3F-AEBB-7F8AFBCD1A5E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {971F15D8-56BB-4420-B69E-039DA01377DA}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://dev.azure.com/andersonduarteamorim
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = WebSafeLife\\WebSafeLife.csproj
+		SccProjectName1 = WebSafeLife
+		SccLocalPath1 = WebSafeLife
+		SccProjectUniqueName2 = SafeLife\\SafeLife.csproj
+		SccProjectName2 = SafeLife
+		SccLocalPath2 = SafeLife
+		SccProjectUniqueName3 = BD\\BD.csproj
+		SccProjectName3 = BD
+		SccLocalPath3 = BD
+		SccProjectUniqueName4 = SafeLifeLib\\SafeLifeLib.csproj
+		SccProjectName4 = SafeLifeLib
+		SccLocalPath4 = SafeLifeLib
+	EndGlobalSection
+EndGlobal

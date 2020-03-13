@@ -1,0 +1,98 @@
+﻿@model SafeLifeLib.Models.ProntuarioModel
+@{
+    ViewData["Title"] = "Receita";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="pad margin no-print">
+    <div class="callout callout-info" style="margin-bottom: 0!important;">
+        <h4><i class="fa fa-info"></i> Importante:</h4>
+        Esta página foi aprimorada para impressão. Clique no botão imprimir na parte inferior da prescrição para testar.
+    </div>
+</div>
+<!-- Main content -->
+<section class="invoice">
+    <!-- title row -->
+    <div class="row">
+        <div class="col-xs-12">
+            <h2 class="page-header">
+                <img src="~/images/logotipo-medico.jpg" style="width:100px;" alt="Logotipo" /> Dr. Jonathan Burke Jr. - 
+                Oftalmologista - CRM 00001 MG
+                <small class="pull-right">12/12/2019 17:30</small>
+            </h2>
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- info row -->
+    <div class="row invoice-info">
+        <div class="col-sm-12 invoice-col">
+            Paciente
+            <address>
+                <strong>Anderson Duarte</strong><br>
+                CPF 123.456.789-00<br>
+                End.: Rua Um, 2<br>
+                Tel: (31) 9999-9999<br>
+                E-mail: email@dominio.com.br
+            </address>
+        </div>
+    </div>
+    <!-- /.row -->
+    <!-- Table row -->
+    <div class="row">
+        <div class="col-xs-12 table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Medicamento</th>
+                        <th>Dosagem</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Captopril 12,5</td>
+                        <td>comprimido (30un) Medley</td>
+                        <td>Tomar um comprimido via oral a cada 8 horas - uso contínuo</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Ablok 12,5</td>
+                        <td>comprimido (30un) Medley</td>
+                        <td>Tomar um comprimido via oral a cada 18 horas - uso contínuo</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Antak 12,5</td>
+                        <td>comprimido (30un) Medley</td>
+                        <td>Tomar um comprimido via oral a cada 1 hora</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Dipirona 12,5</td>
+                        <td>comprimido (30un)</td>
+                        <td>Tomar um comprimido via oral em caso de mau estar.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+    <div class="row">
+       
+    </div>
+    <!-- /.row -->
+    <!-- this row will not appear when printing -->
+    <div class="row no-print">
+        <div class="col-xs-12">
+            <a href="Receita_Impressao" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Imprimir</a>
+            <button type="button" class="btn btn-success pull-right">
+                <i class="fa fa-mail-forward"></i> Enviar por e-mail
+            </button>
+           
+        </div>
+    </div>
+</section>
+<!-- /.content -->

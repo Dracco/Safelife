@@ -1,0 +1,176 @@
+﻿@model WebSafeLife.ViewModels.MedicamentosViewModel
+
+@{
+    ViewData["Title"] = "Medicamentos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Select2 -->
+<link rel="stylesheet" href="/lib/select2/dist/css/select2.min.css">
+
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+
+        <div class="col-md-12">
+            <!-- Horizontal Form -->
+            <div class="box box-info">
+                <!-- form start -->
+                <div class="box-body">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Nome do Medicamento</th>
+                                <th>Laboratório</th>
+                                <th>Dose</th>
+                                <th>Para que usou</th>
+                                <th>Quando começou a usar</th>
+                                <th>Quando terminou de usar</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var medicamento in Model.Medicamentos)
+                            {
+                                <tr>
+                                    <td>@medicamento.Nome</td>
+                                    <td>@medicamento.Laboratorio</td>
+                                    <td>@medicamento.Dosagem</td>
+                                    <td>@medicamento.Motivo</td>
+                                    <td>@medicamento.DataInicio</td>
+                                    <td>@medicamento.DataFim</td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-default"><i class="fa fa-eye"></i></button>
+                                            <button type="button" class="btn btn-default"><i class="fa fa-edit"></i></button>
+                                            <button type="button" class="btn btn-default"><i class="fa fa-trash-o"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+
+                            
+                        </tbody>
+                        
+                    </table>
+
+                </div>
+
+                <!-- /.box-body -->
+                <div class="box-footer">
+                    <div>
+                        <button type="submit" class="btn btn-success pull-right" data-toggle="modal" data-target="#modal-default">Adicionar novo medicamento</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- /.box -->
+        </div>
+        <!--/.col (right) -->
+        <!-- /.row -->
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+</section>
+
+
+<div class="modal fade" id="modal-default">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Medicamento</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row form-group">
+                    <div class="col-xs-6">
+                        <label>Nome do Medicamento</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-xs-6">
+                        <label>Laboratório</label>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-xs-6">
+                        <label>Dose</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-xs-6">
+                        <label>Para quê usou?</label>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-xs-6">
+                        <label>Quando começou usar</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="date" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <label>Quando terminou de usar</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="date" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Salvar</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+@section Scripts{
+    <script src="/lib/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="/lib/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            $('#example1').DataTable({
+                'paging': true,
+                'lengthChange': true,
+                'searching': true,
+                'ordering': true,
+                'info': true,
+                'autoWidth': true
+            })
+        })
+    </script>
+
+
+    <!-- Select2 -->
+    <script src="/lib/select2/dist/js/select2.full.min.js"></script>
+    <!-- InputMask -->
+    <script src="/plugins/input-mask/jquery.inputmask.js"></script>
+    <script src="/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+    <script src="/plugins/input-mask/jquery.inputmask.extensions.js"></script>
+
+    <script>
+        $(function () {
+            //Initialize Select2 Elements
+            $('.select2').select2()
+
+            //Datemask dd/mm/yyyy
+            $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
+            //Datemask2 mm/dd/yyyy
+            $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
+            //Money Euro
+            $('[data-mask]').inputmask()
+
+
+        })</script>
+}

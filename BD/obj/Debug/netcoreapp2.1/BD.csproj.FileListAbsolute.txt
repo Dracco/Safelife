@@ -1,0 +1,12 @@
+D:\Dracco\Safelife\Web.SafeLife\BD\bin\Debug\netcoreapp2.1\BD.deps.json
+D:\Dracco\Safelife\Web.SafeLife\BD\bin\Debug\netcoreapp2.1\BD.dll
+D:\Dracco\Safelife\Web.SafeLife\BD\bin\Debug\netcoreapp2.1\BD.pdb
+D:\Dracco\Safelife\Web.SafeLife\BD\obj\Debug\netcoreapp2.1\BD.csproj.CoreCompileInputs.cache
+D:\Dracco\Safelife\Web.SafeLife\BD\obj\Debug\netcoreapp2.1\BD.AssemblyInfoInputs.cache
+D:\Dracco\Safelife\Web.SafeLife\BD\obj\Debug\netcoreapp2.1\BD.AssemblyInfo.cs
+D:\Dracco\Safelife\Web.SafeLife\BD\obj\Debug\netcoreapp2.1\BD.dll
+D:\Dracco\Safelife\Web.SafeLife\BD\obj\Debug\netcoreapp2.1\BD.pdb
+D:\Dracco\Safelife\Web.SafeLife\BD\obj\Debug\netcoreapp2.1\BD.csprojAssemblyReference.cache
+D:\Dracco\Safelife\Web.SafeLife\BD\bin\Debug\netcoreapp2.1\SafeLifeLib.dll
+D:\Dracco\Safelife\Web.SafeLife\BD\bin\Debug\netcoreapp2.1\SafeLifeLib.pdb
+D:\Dracco\Safelife\Web.SafeLife\BD\obj\Debug\netcoreapp2.1\BD.csproj.CopyComplete

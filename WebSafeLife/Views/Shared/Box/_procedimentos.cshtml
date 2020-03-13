@@ -1,0 +1,68 @@
+﻿@model SafeLifeLib.Models.ProcedimentoModel
+
+<div class="box box-warning">
+    <div class="box-header with-border">
+        <h3 class="box-title">Procedimentos</h3>
+    </div>
+    <!-- /.box-header -->
+    <!-- form start -->
+    <div class="box-body">
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="StandCardiac" type="checkbox" class="flat-green"> StandCardiac
+                    </label>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Safena" type="checkbox" class="flat-green"> Ponte de Safena
+                    </label>
+                </div>
+            </div>
+
+            <div class="col-xs-6">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="ProteseDentaria" type="checkbox" class="flat-green"> Prótese Dentária
+                    </label>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="ImplanteDentario" type="checkbox" class="flat-green"> Implante Dentário
+                    </label>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="MarcaPasso" type="checkbox" class="flat-green"> Marca-passo
+                    </label>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="AparelhoAuricular" type="checkbox" class="flat-green"> Aparelho Auricular
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Outros</label>
+            <textarea asp-for="Outros" class="form-control" rows="3" placeholder="..."></textarea>
+        </div>
+
+    </div>
+    <!-- /.box-body -->
+    <div class="box-footer">
+        <div>
+            <button type="button" class="btn btn-success pull-right">Salvar</button>
+        </div>
+    </div>
+</div>

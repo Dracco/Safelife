@@ -1,0 +1,457 @@
+﻿@model WebSafeLife.ViewModels.ExamesViewModel
+
+@{
+    ViewData["Title"] = "Exames";
+    ViewData["Subtitle"] = "Seu histórico de exames realizados";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Select2 -->
+<link rel="stylesheet" href="/lib/select2/dist/css/select2.min.css">
+
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+
+        <div class="col-md-12">
+            <!-- Horizontal Form -->
+            <div class="box box-info">
+                <!-- form start -->
+                <div class="box-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Tipo de exame</th>
+                                <th>Nome</th>
+                                <th>Data</th>
+                                <th>Local</th>
+                                <th>Tipo de anexo</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var exame in Model.Exames)
+                            {
+                                <tr>
+                                    <td>@exame.TipoExame</td>
+                                    <td>@exame.Anexo.Descricao</td>
+                                    <td>@exame.Data.ToShortDateString()</td>
+                                    <td>@exame.Local</td>
+                                    <td>@exame.Anexo.TipoAnexo</td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-default"><i class="fa fa-eye"></i></button>
+                                            <button type="button" class="btn btn-default"><i class="fa fa-edit"></i></button>
+                                            <button type="button" class="btn btn-default"><i class="fa fa-trash-o"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer">
+                    <div>
+                        <button type="submit" class="btn btn-success pull-right" data-toggle="modal" data-target="#modal-default">Adicionar novo exame</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- /.box -->
+        </div>
+        <!--/.col (right) -->
+        <!-- /.row -->
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+</section>
+
+
+<div class="modal fade" id="modal-default">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Exame</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row form-group">
+                    <div class="col-xs-6">
+                        <label>Data</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="date" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <label>Nome do Exame</label>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Tipo de Exame</label>
+                    <select class="form-control">
+                        <option>Escolha</option>
+                        <option>Hemograma completo</option>
+                        <option>Colesterol</option>
+                        <option>Glicose</option>
+                        <option>TGO</option>
+                        <option>TGP</option>
+                        <option>Eletrólitos</option>
+                        <option>TSH e T4 livre</option>
+                        <option>Ácido úrico</option>
+                        <option>PCR</option>
+                        <option>PSA</option>
+                        <option>Albumina</option>
+                        <option>VHS</option>
+                        <option>
+                            EAS ou Urina Tipo I
+                        </option>
+                        <option>Urocultura</option>
+                        <option>EPF</option>
+                        <option>Ureia e creatinina</option>
+                        <option>Tromboplastina ou protrombina </option>
+                        <option>Diversos</option>
+                        <option>Outros</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Local onde realizou</label>
+                    <select class="form-control select2" style="width: 100%;">
+                        <option>Escolha</option>
+                        <option>AFC</option>
+                        <option>AMPLIAR RADSOM MEDICINA LTDA</option>
+                        <option>ANALISES CLINICAS DOM BOSCO LTDA</option>
+                        <option>ANALISES CLINICAS FRANCIS</option>
+                        <option>ANALYS</option>
+                        <option>ANATOMIA PATOLOGICA E CITOLOGIA LTDA</option>
+                        <option>ANGIOLOGICA METODOS DIAGNOSTICOS E TERAPEUTICOS EM MEDICINA</option>
+                        <option>ANGIOSEMPER</option>
+                        <option>ARTE FIXA LABORATORIO LTDA</option>
+                        <option>AXIAL CENTRO DE IMAGEM</option>
+                        <option>BHLAB</option>
+                        <option>BIOCOD BIOTECNOLOGIA LTDA</option>
+                        <option>BIOTEST LABORATORIO MEDICO</option>
+                        <option>BOECHAT LABORATORIOS</option>
+                        <option>BUCALRAD LTDA</option>
+                        <option>CAPITAL RADIOLOGIA</option>
+                        <option>CARLETI OCUPACIONAL</option>
+                        <option>CDDI</option>
+                        <option>CDI CLINICA DE IMAGEM</option>
+                        <option>CEAP CENTRO ESPECIALIZADO EM ANATOMIA PATOLOGICA</option>
+                        <option>CECO CENTRO DE EXAMES COMPLEMENTARES E OCUPACIONAIS</option>
+                        <option>CEDIVE CENTRO DE DIAGNOSTICO VENDA NOVA</option>
+                        <option>CEDUS</option>
+                        <option>CELULA ALVARO BELO HORIZONTE</option>
+                        <option>CEMER</option>
+                        <option>CENTRO AVANCADO DE ENDOSCOPIA LTDA</option>
+                        <option>CENTRO DE DIAGNOSTICO POR IMAGEM DR MATSUSHITA SC LTDA</option>
+                        <option>CENTRO DE EXAMES OFTALMOLOGICOS LTDA</option>
+                        <option>CENTRO DE HORMONIOS</option>
+                        <option>CENTRO DE MEDICINA NUCLEAR</option>
+                        <option>CENTRO DE QUIMIOTERAPIA ANTIBLASTICA E IMUNOTERAPIA S A</option>
+                        <option>CENTRO DE RADIOGRAFIAS ODONTOLOGICAS LTDA</option>
+                        <option>CENTRO DE REF NACIONAL E INTERNACIONAL PARA FLEBOTOMINEOS</option>
+                        <option>CENTRO DE TOMOGRAFIA COMPUTADORIZADA DE MG LTDA</option>
+                        <option>CENTRO IMAGEM APARELHO DIGESTIVO EGINECOLOGICO LTDA</option>
+                        <option>CENTRO MINEIRO DE RADIOLOGIA</option>
+                        <option>CENTRO MUNICIPAL DE DIAGNOSTICO POR IMAGEM</option>
+                        <option>CENTROLAB</option>
+                        <option>CERB CENTRO ESPECIALIZADO EM RADIOLOGIA BUCAL LTDA</option>
+                        <option>CEROM CENTRO DE RADIO ONCOLOGIA DE MINAS GERAIS LTDA</option>
+                        <option>CESAR MACEDO MEDICINA DIAGNOSTICA</option>
+                        <option>CEU DIAGNOSTICO</option>
+                        <option>CIA DO DENTE PROTESE</option>
+                        <option>CIENTIFICA TECNOGAMA LTDA</option>
+                        <option>CITOCENTER BH</option>
+                        <option>CITOLAB</option>
+                        <option>CITOLOGIA ALVARENGA</option>
+                        <option>CLELIO PROTESE DENTARIA</option>
+                        <option>CLINICA CONRAD</option>
+                        <option>CLINICA DE RADIODIAGINOSTICO MANGABEIRAS</option>
+                        <option>CLINICA DE RADIOLOGIA ODONTOLOGICA DRA ISAURA CAMARGO LTDA</option>
+                        <option>CLINICA MARIA HELENA</option>
+                        <option>CLINICA ODONTOLOGICA ODONTO SOUZA</option>
+                        <option>CLINICA RADIOLOGICA BONFIM LTDA</option>
+                        <option>CLINICA RADIOLOGICA DAVI REZENDE</option>
+                        <option>CLINICA RADIOLOGICA DR PEDRO INACIO DIAS</option>
+                        <option>CLINICA RADIOLOGICA EVALDO FURTADO</option>
+                        <option>CLINICA RADIOLOGICA GODOY LTDA</option>
+                        <option>CLINICA RADIOLOGICA JAVERT BARROS LTDA</option>
+                        <option>CLINICA RADIOLOGICA LUIZ ARTHUR FERREIRA</option>
+                        <option>CLINICA RADIOLOGICA MARTINS E GODOY LTDA</option>
+                        <option>CLINICA RADIOLOGICA ODONTOFACIAL</option>
+                        <option>CLINICA RADIOLOGICA SAO MARCOS</option>
+                        <option>CLINIMAGEM</option>
+                        <option>CMRO</option>
+                        <option>CODON</option>
+                        <option>COMETTO POLISSONOGRAFIA</option>
+                        <option>CONLAB</option>
+                        <option>CORE CENTRO ODONTOLOGICO E RADIOGRAFIAS ESPEC SC LTDA</option>
+                        <option>CRANIUM RADIOLOGIA ODONTOLOGICA</option>
+                        <option>CRODORT</option>
+                        <option>CTC SANTO AGOSTINHO</option>
+                        <option>DESIGN PROTESE DENTARIA</option>
+                        <option>DIAG</option>
+                        <option>DIGITAL RAD</option>
+                        <option>DOC CENTER</option>
+                        <option>DOPSOM LTDA</option>
+                        <option>DOPSOM SERVICO MEDICO DE PROPEDEUTICA POR IMAGEM</option>
+                        <option>ECCOS CLINICA DA IMAGEM</option>
+                        <option>ECOAR</option>
+                        <option>ECOCENTER CENTRO DE DOPPLERECOGRAFIA</option>
+                        <option>ECOGRAF NUCLEO DE DIAGNOSTICO CARDIOVASCULAR LTDA EPP</option>
+                        <option>ECOMINAS</option>
+                        <option>ENDOCIRURGICA</option>
+                        <option>ENDOMEDIC</option>
+                        <option>ENDOSCOPIA CLINICA E CIRURGICA</option>
+                        <option>ENDOSERV</option>
+                        <option>GENESIS ULTRASSOM DIAGNOSTICO LTDA</option>
+                        <option>GENETICA LABORATORIOS BELO HORIZONTE</option>
+                        <option>GMN</option>
+                        <option>GRUPO LUIMAR DIAGNOSTICO LTDA</option>
+                        <option>HEMOBIO</option>
+                        <option>HEMOSERVICE BARREIRO</option>
+                        <option>HEMOTEST LABORATORIO DE ANALISES CLINICAS</option>
+                        <option>HUSEDESIMED</option>
+                        <option>I COR</option>
+                        <option>IAC</option>
+                        <option>IMAGEM CLINICA DE RADIODIAGNOSTICO LTDA</option>
+                        <option>IMAGEM DO CORPO</option>
+                        <option>IMAGEM RESSONANCIA NUCLEAR MAGNETICA</option>
+                        <option>IMAGIS ULTRASONOGRAFIA</option>
+                        <option>IMDRO</option>
+                        <option>IMEDE</option>
+                        <option>IMPA</option>
+                        <option>IMPARTS RADIOLOGIA ODONTOLOGICA POR IMAGEM</option>
+                        <option>IMRAD</option>
+                        <option>IMRAD DIAGNOSTICOS</option>
+                        <option>IMUNOLAB TRANSPLANTES</option>
+                        <option>INAL CIENCIA E SAUDE</option>
+                        <option>INSITUTO HERMES PARDINI </option>
+                        <option>INSTITUTO DE RADIOGRAFIAS DENTARIAS J RIBAMAR SIMAO LTDA</option>
+                        <option>INSTITUTO MINEIRO DE MEDICINA NUCLEAR EIRELI EPP</option>
+                        <option>INSTITUTO MINEIRO DE NEFROLOGIA</option>
+                        <option>INSTITUTO MOACYR JUNQUEIRA</option>
+                        <option>INTEGRAL</option>
+                        <option>INTERVENCOR</option>
+                        <option>IRA</option>
+                        <option>IRA INSTITUTO ROBERTO ALVARENGA LTDA </option>
+                        <option>IROG INSTITUTO DE RADIOGRAFIAS ODONTOLOGICAS GUARANI</option>
+                        <option>JOSE DE SOUZA ANDRADE FILHO SOCIEDADE CIVIL LTDA</option>
+                        <option>LAB CYTO GENESIS</option>
+                        <option>LAB REDE</option>
+                        <option>LABCLIM DIAGNOSTICOS</option>
+                        <option>LABCLIN LABORATORIO DE ANALISES CLINICAS</option>
+                        <option>LABCLIN TOXICOLOGICO</option>
+                        <option>LABFAR</option>
+                        <option>LABO CITO</option>
+                        <option>LABORAR</option>
+                        <option>LABORATEL LTDA</option>
+                        <option>LABORATORIO AGAPE</option>
+                        <option>LABORATORIO ANALYS LTDA</option>
+                        <option>LABORATORIO CITOCLINICA</option>
+                        <option>LABORATORIO CITODIAGNOSTICO</option>
+                        <option>LABORATORIO COLETA LTDA</option>
+                        <option>LABORATORIO CRIS</option>
+                        <option>LABORATORIO CYTOGENESIS</option>
+                        <option>LABORATORIO DAIRTON MIRANDA LTDA</option>
+                        <option>LABORATORIO DE ANALISES CLINICAS SILFAR</option>
+                        <option>LABORATORIO DE PROTESE SAO JORGE LTDA</option>
+                        <option>LABORATORIO DE PROTESE SEPE LTDA</option>
+                        <option>LABORATORIO DENTAL ARAUJO</option>
+                        <option>LABORATORIO DENTAL ELIAS QUIRINO</option>
+                        <option>LABORATORIO FUTURO</option>
+                        <option>LABORATORIO GERALDO LUSTOSA </option>
+                        <option>LABORATORIO HEMAPE</option>
+                        <option>LABORATORIO HEMED</option>
+                        <option>LABORATORIO HEMOBEL PATOLOGIA CLINICA LTDA</option>
+                        <option>LABORATORIO HOSPITAL MATER DEI</option>
+                        <option>LABORATORIO HUGO SILVIANO BRANDAO</option>
+                        <option>LABORATORIO HUMBERTO ABRAO </option>
+                        <option>LABORATORIO LAMOUNIER</option>
+                        <option>LABORATORIO LAPECCO LTDA</option>
+                        <option>LABORATORIO LISTER</option>
+                        <option>LABORATORIO MAIA</option>
+                        <option>LABORATORIO MANSONI</option>
+                        <option>LABORATORIO MUNICIPAL DE REFERENCIA EM ANALISES CLINICAS E C</option>
+                        <option>LABORATORIO NOVA SUISSA</option>
+                        <option>LABORATORIO NUCLEO</option>
+                        <option>LABORATORIO OSWALDO CRUZ </option>
+                        <option>LABORATORIO PAULA CASTRO</option>
+                        <option>LABORATORIO PRONTO TESTE</option>
+                        <option>LABORATORIO REIS</option>
+                        <option>LABORATORIO ROJAN</option>
+                        <option>LABORATORIO SALOME</option>
+                        <option>LABORATORIO SANTA CECILIA LTDA</option>
+                        <option>LABORATORIO SANTA OLIMPIA LTDA</option>
+                        <option>LABORATORIO SANTA PAULA LTDA</option>
+                        <option>LABORATORIO SAO LAZARO LTDA</option>
+                        <option>LABORATORIO SAO MARCOS</option>
+                        <option>LABORATORIO SAO PAULO</option>
+                        <option>LABORATORIO SEPARE </option>
+                        <option>LABORATORIO SOUZA FIDELIS</option>
+                        <option>LABORATORIO SOUZA LIMA LTDA</option>
+                        <option>LABORATORIO TAFURI DE PATOLOGIA</option>
+                        <option>LABORATORIO TAFURI SAO PAULO</option>
+                        <option>LABORATORIO VILAS BOAS</option>
+                        <option>LABORATORIOS KLEIBER</option>
+                        <option>LABORCLINICO LABORATORIO DE ANALISES CLINICAS LTDA</option>
+                        <option>LABORZIL</option>
+                        <option>LACCS</option>
+                        <option>LACT</option>
+                        <option>LAMEGO DIAGNOSTICOS</option>
+                        <option>LATEC</option>
+                        <option>LUME</option>
+                        <option>LUPA</option>
+                        <option>MARCO ANTONIO DIAS</option>
+                        <option>MARIA CHRISTINA LOYOLA EXAMES CITOLOGICOS LTDA</option>
+                        <option>MARTINS E GODOY MEDICINA DIAGNOSTICA</option>
+                        <option>MASTOCLINICA</option>
+                        <option>MAXIO RADIOLOGIA E TOMOGRAFIA ODONTOLOGICA</option>
+                        <option>MED SOM CLINICA DE IMAGEM</option>
+                        <option>MEDICINA LABORATORIAL JORGE SALIBA LTDA</option>
+                        <option>MEDSCAN</option>
+                        <option>MICRA BIOTECNOLOGIA LABORATORIO DE ANALISES CLINICAS LTDA</option>
+                        <option>MINAS RADIOGRAFIAS ODONTOLOGICAS</option>
+                        <option>NEAD NUCLEO DE ENDOSCOPIA AVANCADA DO APARELHO DIGESTIVO</option>
+                        <option>NED IMAGEM</option>
+                        <option>NEORAD</option>
+                        <option>NEVES CAMBRAIA</option>
+                        <option>NOVO RUMO SAUDE DIAGNOSTICOS POR IMAGENS LTDA</option>
+                        <option>NUCLEAR MEDCENTER LTDA</option>
+                        <option>NUCLEAR MEDICINA DIAGNOSTICA</option>
+                        <option>NUCLEO RADIOLOGICO BURITIS</option>
+                        <option>NUCLEOSON</option>
+                        <option>ODONTO IMAGEM</option>
+                        <option>ODONTODOC</option>
+                        <option>OPDJB</option>
+                        <option>ORAL 3 D</option>
+                        <option>OURO PRETO RADIOGRAFIAS ODONTOLOGICAS</option>
+                        <option>PATOLOGIA CLINICA EDUARDO CISALPINO</option>
+                        <option>PATOLOGIA CLINICA SAO MARCOS LTDA</option>
+                        <option>PERSONAL DIAGNOSTICOS DE PRECISAO</option>
+                        <option>PERSONAL PROCEDIMENTOS ENDOSCOPICOS E PROPEDEUTICOS</option>
+                        <option>PHD IMAGENS</option>
+                        <option>PITTELLA ANDRADE ANATOMIA PATOLOGICA E CITOPATOLOGIA LTDA</option>
+                        <option>PONTTUAL LABORATORIO DE PROTESE</option>
+                        <option>PONTUAL SAUDE</option>
+                        <option>PRO CELULA EXAMES CITOLOGICOS LTDA</option>
+                        <option>PRONTOLAB</option>
+                        <option>PRONTOLAB LABORATORIO DE PATOLOGIA CLINICA</option>
+                        <option>PROTESE AGUIAR</option>
+                        <option>PROTESE DENTARIA EDILENE</option>
+                        <option>PROTESE DENTARIA LICIO SEPE</option>
+                        <option>PROTESE ODONTOLOGICA ALEXANDRE DIAMANTINO LTDA</option>
+                        <option>RADE PAIVA</option>
+                        <option>RADIO CENTER</option>
+                        <option>RADIODENT</option>
+                        <option>RADIOGRAF</option>
+                        <option>RADIOGRAFI DIGITAL</option>
+                        <option>RADIOGRAFIAS BUCODENTAL</option>
+                        <option>RADIOGRAFIAS ODONTOLOGICAS</option>
+                        <option>RADIOMIG</option>
+                        <option>RADIUS MEDICINA DIAGNOSTICA</option>
+                        <option>RADSOM</option>
+                        <option>RAIO MED</option>
+                        <option>REDIMAMA RADIOMED</option>
+                        <option>RG RADIOGRAFIAS DENTARIAS</option>
+                        <option>RLK</option>
+                        <option>ROENTGEN RADIOLOGIA PEDIATRICA E DE ADULTOS LTDA</option>
+                        <option>ROJAN IMAGEM</option>
+                        <option>RX3DIGITAL</option>
+                        <option>SANTALAB</option>
+                        <option>SAO MARCOS SAUDE E MEDICINA DIAGNOSTICA SA</option>
+                        <option>SCANNER</option>
+                        <option>SERMIG</option>
+                        <option>SERMIG SERV RADIOLOGIA E ULTRA SONOGRAFIA DE MINAS GERAIS L</option>
+                        <option>SERO</option>
+                        <option>SERVICO DE ANATOMIA PATOLOGICA VIRCHOW LTDA</option>
+                        <option>SES MG LABORATORIO OTICO ESTADUAL</option>
+                        <option>SILVA E SILVA SC</option>
+                        <option>SIMAO RADIOGRAFIAS DENTARIAS</option>
+                        <option>SIMILE IMUNOLOGIA</option>
+                        <option>SLICE DIAGNOSTICO VOLUMETRICO POR IMAGEM</option>
+                        <option>SMR SERVICOS MEDICOS E RADIOLOGICOS LTDA</option>
+                        <option>SONAR MEDICINA DIAGNOSTICA</option>
+                        <option>SPECTRA DIAGNOSTICO POR IMAGEM</option>
+                        <option>TEIXEIRA E DIAS SERVICOS MEDICOS LTDA</option>
+                        <option>TOMOCENTER LTDA</option>
+                        <option>TOMOGRAFIA DO HOSPITAL DA BALEIA</option>
+                        <option>TOMOGRAFIA DO HOSPITAL SEMPER</option>
+                        <option>UDI</option>
+                        <option>ULTRA SCAN</option>
+                        <option>ULTRA SOM DIAGNOSTICO E MEDICINA ESPECIALIZADA SC LTDA</option>
+                        <option>ULTRAMAX</option>
+                        <option>ULTRASONOGRAFIA SAO CAMILO</option>
+                        <option>ULTRASSOM CENTRO DIAGNOSTICO</option>
+                        <option>UNIECO</option>
+                        <option>UNIMAGEM</option>
+                        <option>UNRAD RADIOLOGIA E ULTRASSONOGRAFIA LTDA</option>
+                        <option>VILLAS</option>
+                        <option>VISION</option>
+                        <option>VJV DIAGNOSTICO VOLUMETRICO POR IMAGEM LTDA</option>
+                        <option>VOXEL PADRE EUSTAQUIO</option>
+                        <option>XRAD TOMOGRAFIA DIGITAL</option>
+                        <option>Outro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputFile">Anexar documento</label>
+                    <input type="file" id="exampleInputFile" class="btn btn-default">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Salvar</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+@section Scripts{
+    <script src="/lib/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="/lib/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            $('#example1').DataTable({
+                'paging': true,
+                'lengthChange': true,
+                'searching': true,
+                'ordering': true,
+                'info': true,
+                'autoWidth': true
+            })
+        })
+    </script>
+
+
+    <!-- Select2 -->
+    <script src="/lib/select2/dist/js/select2.full.min.js"></script>
+    <!-- InputMask -->
+    <script src="/plugins/input-mask/jquery.inputmask.js"></script>
+    <script src="/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+    <script src="/plugins/input-mask/jquery.inputmask.extensions.js"></script>
+
+    <script>
+        $(function () {
+            //Initialize Select2 Elements
+            $('.select2').select2()
+
+            //Datemask dd/mm/yyyy
+            $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
+            //Datemask2 mm/dd/yyyy
+            $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
+            //Money Euro
+            $('[data-mask]').inputmask()
+
+
+        })</script>
+}

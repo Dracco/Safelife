@@ -1,0 +1,131 @@
+﻿@model WebSafeLife.ViewModels.FichaViewModel
+
+@{
+    ViewData["Title"] = "Ficha de Saúde";
+    ViewData["Subtitle"] = "Histórico médico completo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!-- Main content -->
+<section class="content">
+    <div class="visible-print">
+        <h1>
+            @ViewData["Title"]
+        </h1>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box">
+                <div class="box-header with-border">
+                    <img class="profile-user-img img-responsive img-circle" src="https://pbs.twimg.com/profile_images/2478798806/Perfil.jpg" alt="Foto">
+                    <h3 class="profile-username text-center">
+                        @Model.Pessoa.Nome
+                    </h3>
+                </div>
+
+                <div class="box-body">
+
+                    <p>
+                        Homem, 56 anos, nascido em 12 de maio de 1964.
+                    </p>
+
+                    <p>É praticante de atividades físicas regulares, tem boa alimentação e faz checkups preventivos frequentes.</p>
+
+                    <p>Seu IMC é ótimo mantendo o peso de 80kg medido pela última vez em 20 de fevereiro de 2019 e altura de 1,80m.</p>
+                    <p>Sua última aferição de pressão arterial de 120/90 foi em 29 de fevereiro de 2019, tem casos de hipertensos na família.</p>
+                    <p>Seu tipo sanguíneo é O+.</p>
+                </div>
+            </div>
+            <!-- Horizontal Form -->
+
+            <partial name="Box/_medicamentos" model="Model.Medicamentos" />
+            <!-- /.box -->
+        </div>
+
+        <div class="col-md-6">
+            <partial name="Box/_procedimentos" model="Model.Procedimento" />
+
+            <partial name="Box/_patologias" model="Model.Patologia" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-warning">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Pressão Arterial</h3>
+                </div>
+                <div class="box-body chart-responsive">
+                    <div class="chart" id="revenue-chart" style="height: 300px;"></div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+       
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="pull-right">
+                <button type="button" class="btn btn-default"><i class="fa fa-print"></i> Imprimir</button>
+            </div>
+        </div>
+    </div>
+    
+</section>
+<!-- /.content -->
+
+@section Scripts{
+    <script src="/lib/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="/lib/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            $('#example1').DataTable({
+                'paging': false,
+                'lengthChange': false,
+                'searching': false,
+                'ordering': false,
+                'info': false,
+                'autoWidth': false
+            })
+        })
+    </script>
+
+
+    <script src="/lib/raphael/raphael.min.js"></script>
+
+    <script src="/lib/morris.js/morris.min.js"></script>
+
+    <script>
+        $(function () {
+            "use strict";
+
+            // AREA CHART
+            var area = new Morris.Area({
+                element: 'revenue-chart',
+                resize: true,
+                data: [
+                    { y: '2016 Q4', item1: 10, item2: 7 },
+                    { y: '2017 Q1', item1: 12, item2: 8 },
+                    { y: '2017 Q2', item1: 13, item2: 8 },
+                    { y: '2017 Q3', item1: 13, item2: 9 },
+                    { y: '2017 Q4', item1: 14, item2: 10 },
+                    { y: '2018 Q1', item1: 14, item2: 8 },
+                    { y: '2018 Q2', item1: 12, item2: 11 },
+                    { y: '2018 Q3', item1: 13, item2: 10 },
+                    { y: '2018 Q4', item1: 15, item2: 8 },
+                    { y: '2019 Q1', item1: 15, item2: 10 },
+                    { y: '2019 Q2', item1: 14, item2: 11 },
+                    { y: '2019 Q3', item1: 14, item2: 10 },
+                    { y: '2019 Q4', item1: 12, item2: 8 },
+                    { y: '2020 Q1', item1: 10, item2: 8 }
+                ],
+                xkey: 'y',
+                ykeys: ['item1', 'item2'],
+                labels: ['Sistolica', 'Diastolica'],
+                lineColors: ['#a0d0e0', '#3c8dbc'],
+                hideHover: 'auto'
+            });
+
+
+        });</script>
+}
